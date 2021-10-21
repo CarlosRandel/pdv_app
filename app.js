@@ -62,8 +62,7 @@ const db = require("./config/db")
     })
     app.get('/', (req, res) => {
         
-        res.send('erro funcionou')
-//         res.render( "./index")   
+        res.render( "/index")   
 
     })
     app.use('/usuarios', usuarios)
