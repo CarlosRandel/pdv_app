@@ -1,0 +1,24 @@
+<div class="viewd"> 
+    <h2>Lista de Produtos: </h2>
+        <section class="flexsec">
+            
+            {{#each produtos}}
+                <div class="divprod">
+                    <h4>Nome: {{produto}}</h4>
+                    <small>QTD: {{quantidade}}</small>
+                    <div class="divbt">
+                        <a href="/admin/produtos/edit/{{_id}}"><button class="fas fa-edit btnedt"></button></a>
+                        <div>
+                        <form action="/admin/produtos/del" method="POST">
+                            <input type="hidden" name="id" value="{{_id}}">
+                            <button type="" class="far fa-trash-alt btndell"></button>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+        {{else}}
+        <h4>Nenhum produto encontrado</h4>
+        {{/each}}
+        </section>
+    <a href="/admin/addprodutos"><button class="btn">Cadastrar Produtos</button></a>
+</div>

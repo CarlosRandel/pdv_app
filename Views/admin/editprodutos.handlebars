@@ -1,0 +1,20 @@
+
+<form action="/admin/produtos/edit" method="POST">
+<div class="viewd">
+    {{#each erros}}
+    <div class="viewdanger">{{texto}}</div>
+    {{else}}
+
+    {{/each}}
+        <input type="hidden" name="id" value="{{produto._id}}">
+    <div class="divcl">
+        <h1>Editar de Produtos</h1/>
+        <hr>
+        <label for="nome_prod" class="lb">Produto: </label>
+        <input type="text" name="produto" id="prod_nome" placeholder="Nome do Produto" class="inpt" value="{{produto.produto}}">
+        <label for="qtd" class="lb">Quantidade: </label>
+        <input type="number" name="quantidade" id="prod_qtd" placeholder="Quantidade em Estoque" class="inpt" value="{{produto.quantidade}}">
+        <button type="submit" class="btn" >Cadastrar</button>
+    </div>
+</div>
+</form>

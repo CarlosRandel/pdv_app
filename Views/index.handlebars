@@ -1,0 +1,25 @@
+{{#if user}}
+<div class="viewd"><h4>Aqui ficará a Dashboard</h4></div>
+
+
+{{else}}
+<form action="/usuarios/login" method="POST">
+<div class="viewd">
+    {{#each erros}}
+    <div class="viewdanger">{{texto}}</div>
+    {{else}}
+
+    {{/each}}
+    <div class="divcl">
+        <h1>Login</h1/>
+        <hr>
+        <label for="nome_user" class="lb">Usuário: </label>
+        <input type="text" name="usuario" id="user_nome" placeholder="Nome de Usuário" class="inpt">
+        <label for="qtd" class="lb">Senha: </label>
+        <input type="password" name="senha" id="user_senha" placeholder="Digite a senha" class="inpt">
+        <button type="submit" class="btn" >Entrar</button>
+        <div class="divbtn"><a href="usuarios/registro">Cadastrar</a></div>
+    </div>
+</div>
+</form>
+{{/if}}
