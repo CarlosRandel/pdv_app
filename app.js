@@ -43,7 +43,7 @@ const db = require("./config/db")
         app.engine('handlebars', handlebars({defaultLayout: 'main'}))
 
         app.set('view engine', 'handlebars', path.join(__dirname + 'views'))
-        app.use(express.static(path.join(__dirname + '../views')))
+        app.use(express.static(path.join(__dirname + '../public')))
     //Mongoose
         mongoose.Promise = global.Promise;
         mongoose.connect(db.mongoURI).then(() => {
