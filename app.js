@@ -43,7 +43,7 @@ const db = require("./config/db")
         app.engine('handlebars', handlebars({defaultLayout: 'main'}))
 
         app.set('view engine', 'handlebars', path.join(__dirname + 'views'))
-        app.use(express.static(path.join(__dirname + '../public')))
+        app.use(express.static(path.join(__dirname + '../views')))
     //Mongoose
         mongoose.Promise = global.Promise;
         mongoose.connect(db.mongoURI).then(() => {
@@ -61,7 +61,7 @@ const db = require("./config/db")
         res.send(__dirname + 'Erro 404')
     })
     app.get('/', (req, res) => {
-        res.render( __dirname + "/index")
+        res.render("./index")
     }
     app.use('/usuarios', usuarios)
     
