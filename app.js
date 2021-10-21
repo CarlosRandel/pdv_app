@@ -61,9 +61,10 @@ const db = require("./config/db")
         res.send(__dirname + 'Erro 404')
     })
     app.get('/', (req, res) => {
-        
-        res.render( "/index")   
-
+    }).then(() => {
+    res.render( "/index")
+    }).catch((err) => {
+      res.send('houve um erro')
     })
     app.use('/usuarios', usuarios)
     
